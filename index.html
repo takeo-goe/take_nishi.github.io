@@ -10,6 +10,15 @@
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .section { margin-bottom: 2rem; }
+        
+        /* 写真を美しく表示するための魔法（CSS） */
+        .photo-section img {
+            max-width: 100%; /* スマホ画面からはみ出さない */
+            height: auto;
+            border-radius: 8px; /* 角を少し丸くしてモダンに */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 軽い影をつけて立体感を出す */
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -30,11 +39,16 @@
         </ul>
     </div>
 
+    <div class="section photo-section">
+        <h2>Hobbies / Cooking</h2>
+        <p>研究の合間の息抜きです。</p>
+        <img src="IMG_3334.jpg" alt="こだわりの自作料理">
+    </div>
+
     <div class="section">
         <h2>Links</h2>
         <ul>
             <li><a href="https://github.com/あなたのユーザー名">GitHub</a></li>
-            <li><a href="#"></a></li>
             <li><a href="https://sites.google.com/holospectra.com/take-nishi/home">HP of take_nishi</a></li>
         </ul>
     </div>
