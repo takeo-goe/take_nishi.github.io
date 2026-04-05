@@ -3,66 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Nishi</title>
+    <title>Takeo Nishimata - Portfolio</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem; color: #333; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
+        /* 全体のベーススタイル */
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fafafa;
+        }
+        
+        /* メインコンテンツの幅を制御 */
+        .container {
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 0; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        .section { margin-bottom: 2rem; }
+        .section { margin-bottom: 3rem; }
         
+        /* --- ナビゲーションメニューの魔法（CSS） --- */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px); /* 背景を少しぼかしてすりガラス風に */
+            border-bottom: 1px solid #eaecef;
+            position: sticky; /* スクロールしても上部に追従 */
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1.5rem; /* メニュー項目間の余白 */
+        }
+        .nav-links a {
+            color: #555;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
         /* 写真を美しく表示するための魔法（CSS） */
         .photo-section img {
-            max-width: 80%; /* スマホ画面からはみ出さない */
+            max-width: 80%; 
             height: auto;
-            border-radius: 8px; /* 角を少し丸くしてモダンに */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 軽い影をつけて立体感を出す */
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
             margin-top: 1rem;
+        }
+        
+        /* PDFボタンの装飾 */
+        .pdf-btn {
+            display: inline-block;
+            background-color: #f1f8ff;
+            border: 1px solid #0366d6;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .pdf-btn:hover {
+            background-color: #0366d6;
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <h1>Takeo Nishimata</h1>
-    <p></p>
 
-    <div class="section">
-        <h2>About Me</h2>
-        <p>非平衡統計力学（確率熱力学）と深層学習（物理情報ニューラルネットワーク）の融合領域を研究しています。データ駆動でランジュバン動力学を抽出し、ゆらぎの定理でその熱力学的正当性を証明するアプローチを開拓中です。</p>
-    </div>
-
-    <section>
-        <h2 class="ja">Research Proposal</h2>
-        <div class="card" style="text-align: center; border-top: 4px solid #c0392b;">
-            <p class="ja"></p>
-            <div style="margin-top: 20px;">
-                <a href="Research Proposal- Data-Driven Extraction of Langevin Dynamics and Thermodynamic Validation via the Fluctuation.pdf" target="_blank" class="pdf-btn">
-                    <span class="ja">📄  Research Proposal(PDF) を読む</span>
-                </a>
-            </div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Take Nishi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#proposal">Proposal</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <div class="section">
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Hamiltonian Neural Networks (HNN)</li>
-            <li>Stochastic Thermodynamics</li>
-            <li>Active Matter Physics</li>
-        </ul>
+    <div class="container">
+        <h1>Takeo Nishimata</h1>
+        
+        <div id="about" class="section">
+            <h2>About Me</h2>
+            <p>非平衡統計力学（確率熱力学）と深層学習（物理情報ニューラルネットワーク）の融合領域を研究しています。データ駆動でランジュバン動力学を抽出し、ゆらぎの定理でその熱力学的正当性を証明するアプローチを開拓中です。</p>
+        </div>
+
+        <section id="proposal" class="section">
+            <h2 class="ja">Research Proposal</h2>
+            <div class="card" style="text-align: center; border-top: 4px solid #c0392b; padding-top: 1rem;">
+                <p class="ja">The core concept of my research integrating stochastic thermodynamics and AI.</p>
+                <div style="margin-top: 20px;">
+                    <a href="Research Proposal- Data-Driven Extraction of Langevin Dynamics and Thermodynamic Validation via the Fluctuation.pdf" target="_blank" class="pdf-btn">
+                        <span class="ja">📄 Research Proposal (PDF)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="interests" class="section">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>Hamiltonian Neural Networks (HNN)</li>
+                <li>Stochastic Thermodynamics</li>
+                <li>Active Matter Physics</li>
+            </ul>
+        </div>
+
+        <div id="hobbies" class="section photo-section">
+            <h2>Hobbies / Cooking</h2>
+            <p>研究の合間の息抜きです。厨房という名の非平衡オープン系での実験記録。</p>
+            <img src="IMG_3334.jpg" alt="こだわりの自作料理">
+        </div>
+
+        <div id="links" class="section">
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://github.com/あなたのユーザー名">GitHub</a></li>
+                <li><a href="https://sites.google.com/holospectra.com/take-nishi/home">HP of take_nishi</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="section photo-section">
-        <h2>Hobbies / Cooking</h2>
-        <p>研究の合間の息抜きです。</p>
-        <img src="IMG_3334.jpg" alt="こだわりの自作料理">
-    </div>
-
-    <div class="section">
-        <h2>Links</h2>
-        <ul>
-            <li><a href="https://github.com/あなたのユーザー名">GitHub</a></li>
-            <li><a href="https://sites.google.com/holospectra.com/take-nishi/home">HP of take_nishi</a></li>
-        </ul>
-    </div>
 </body>
 </html>
