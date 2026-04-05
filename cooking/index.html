@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Physics - Takeo Nishimata</title>
+    <style>
+        /* メインサイトのCSSを継承 */
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; background-color: #fff; min-height: 100vh; }
+        h1 { border-bottom: 2px solid #c0392b; padding-bottom: 0.5rem; color: #333; }
+        
+        /* 階層移動用のナビ */
+        nav { background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #eaecef; position: sticky; top: 0; z-index: 1000; padding: 1rem 0; }
+        .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 2rem; }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; margin: 0; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 0.9rem; }
 
+        /* 料理ギャラリー（タイル状に並べる） */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 2rem; }
+        .gallery-item { border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: #fff; }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; }
+        .gallery-item .info { padding: 15px; }
+        .gallery-item h3 { margin: 0; font-size: 1.1rem; color: #c0392b; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" style="font-weight: bold; color: #333; text-decoration: none;">← Back to Home (Research)</a>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Culinary Physics</h1>
+        <p>「厨房」という名の、熱と物質が交差する非平衡オープン系での実験記録。</p>
+
+        <div id="gallery" class="gallery">
+            <div class="gallery-item">
+                <img src="../IMG_3334.jpg" alt="自作料理1">
+                <div class="info">
+                    <h3>低温調理によるタンパク質の変性制御</h3>
+                    <p>65℃を維持し、コラーゲンの可溶化とアクチンの凝集を精密にコントロールした実験例。</p>
+                </div>
+            </div>
+            </div>
+
+        <div id="philosophy" style="margin-top: 4rem; padding: 2rem; background: #fff5f5; border-radius: 8px;">
+            <h2>Cooking Philosophy</h2>
+            <p>私にとって料理とは、五感を用いた物理学の社会実装です。メイラード反応による芳香分子の生成や、エマルジョンの安定化理論を、皿という名の境界条件の中に閉じ込める作業に他なりません。</p>
+        </div>
+    </div>
+
+</body>
+</html>
