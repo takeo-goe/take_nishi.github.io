@@ -3,97 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takeo Nishimata</title>
+    <title>Takeo Nishimata - Portfolio</title>
     <style>
-        /* 全体のベーススタイル */
+        /* --- 変数設定 --- */
+        :root {
+            --primary-color: #2c3e50; /* 落ち着いた紺色 */
+            --accent-color: #c0392b;  /* アクセントの赤 */
+            --bg-color: #fcfcfc;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        /* --- 全体のベーススタイル --- */
+        * { box-sizing: border-box; }
         body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif; 
+            line-height: 1.8; 
+            color: var(--text-color); 
             margin: 0; 
             padding: 0; 
-            background-color: #fafafa;
+            background-color: var(--bg-color);
+            -webkit-text-size-adjust: 100%;
         }
         
-        /* メインコンテンツの幅を制御 */
         .container {
             max-width: 800px; 
             margin: 0 auto; 
-            padding: 2rem;
+            padding: 2rem 1.5rem;
             background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
 
-        h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 0; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .section { margin-bottom: 3rem; }
+        /* セリフ体を見出しに適用して知的な印象に */
+        h1, h2, .ja-serif {
+            font-family: 'Georgia', 'Times New Roman', 'Shippori Mincho', serif;
+            font-weight: 600;
+        }
+
+        h1 { border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-top: 0; font-size: 1.8rem; }
+        h2 { color: var(--primary-color); border-left: 4px solid var(--accent-color); padding-left: 10px; margin-top: 2.5rem; font-size: 1.4rem; }
         
-        /* --- ナビゲーションメニューの魔法（CSS） --- */
+        a { color: #0366d6; text-decoration: none; transition: 0.2s; }
+        a:hover { text-decoration: underline; }
+        .section { margin-bottom: 3.5rem; }
+
+        /* --- ナビゲーションメニュー --- */
         nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px); /* 背景を少しぼかしてすりガラス風に */
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid #eaecef;
-            position: sticky; /* スクロールしても上部に追従 */
+            position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
         }
         .nav-container {
             max-width: 800px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
         .nav-brand {
             font-weight: bold;
             font-size: 1.2rem;
-            color: #333;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
         .nav-links {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 1.5rem; /* メニュー項目間の余白 */
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .nav-links a {
-            color: #555;
-            font-size: 0.95rem;
+            color: #666;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: color 0.2s;
+            padding: 4px 8px;
         }
-        .nav-links a:hover {
-            color: #0366d6;
-            text-decoration: none;
-        }
+        .nav-links a:hover { color: var(--primary-color); }
 
-        /* 写真を美しく表示するための魔法（CSS） */
-        .photo-section img {
-            max-width: 80%; 
-            height: auto;
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        /* --- 研究カード --- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
             margin-top: 1rem;
+            text-align: left;
+            border-top: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
-        
-        /* PDFボタンの装飾 */
+        .card p { margin-top: 0; font-size: 0.95rem; }
+
+        /* --- ボタン --- */
         .pdf-btn {
-            display: inline-block;
-            background-color: #f1f8ff;
+            display: inline-flex;
+            align-items: center;
+            background-color: #f8f9fa;
             border: 1px solid #0366d6;
-            padding: 10px 20px;
+            color: #0366d6;
+            padding: 12px 20px;
             border-radius: 6px;
             font-weight: bold;
-            transition: all 0.2s;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
         }
-        .pdf-btn:hover {
-            background-color: #0366d6;
-            color: #fff;
-            text-decoration: none;
+        .pdf-btn:hover { background-color: #0366d6; color: #fff; text-decoration: none; }
+
+        /* --- 写真 --- */
+        .photo-section img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 1.5rem auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* --- リスト --- */
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+
+        /* --- スマホ向け調整 --- */
+        @media (min-width: 600px) {
+            .nav-container { flex-direction: row; justify-content: space-between; }
+            .nav-brand { margin-bottom: 0; }
+            h1 { font-size: 2.2rem; }
+            .pdf-btn { width: auto; }
         }
     </style>
 </head>
@@ -104,72 +149,65 @@
             <a href="#" class="nav-brand">Take Nishi</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#proposal">Proposal</a></li>
+                <li><a href="#proposal">Research</a></li>
                 <li><a href="#interests">Interests</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="cooking/index.html" style="color: #c0392b; font-weight: bold;">Cooking Page</a></li>
-                <li><a href="notes/index.html" style="color: #c0392b; font-weight: bold;">Notes</a></li>
+                <li><a href="cooking/index.html" style="color: var(--accent-color); font-weight: bold;">Cooking</a></li>
+                <li><a href="notes/index.html" style="color: var(--accent-color); font-weight: bold;">Notes</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Takeo Nishimata</h1>
-        
-        <div id="about" class="section">
-            <h2>About Me</h2>
-            <p>非平衡統計力学（確率熱力学）と深層学習（物理情報ニューラルネットワーク）の融合領域を研究したいと思っています。データ駆動でランジュバン動力学を抽出し、ゆらぎの定理でその熱力学的正当性を証明するアプローチを開拓中です。</p>
-        </div>
+        <header class="section">
+            <h1>Takeo Nishimata</h1>
+            <div id="about">
+                <p>非平衡統計力学（確率熱力学）と深層学習（物理情報ニューラルネットワーク）の融合領域を研究しています。データ駆動でランジュバン動力学を抽出し、ゆらぎの定理でその熱力学的正当性を証明するアプローチを開拓中です。</p>
+            </div>
+        </header>
 
         <section id="proposal" class="section">
-            <h2 class="ja">Research Proposal</h2>
-            <div class="card" style="text-align: center; border-top: 4px solid #c0392b; padding-top: 1rem;">
-                <p class="ja">The core concept of my research integrating stochastic thermodynamics and AI.</p>
-                <div style="margin-top: 20px;">
-                    <a href="Research Proposal- Data-Driven Extraction of Langevin Dynamics and Thermodynamic Validation via the Fluctuation.pdf" target="_blank" class="pdf-btn">
-                        <span class="ja">📄 Research Proposal (PDF)</span>
-                    </a>
-                </div>
+            <h2>Research Proposal</h2>
+            <div class="card">
+                <p><strong>Integration of Stochastic Thermodynamics and AI</strong></p>
+                <p style="color: #666; font-size: 0.85rem;">データ駆動型ランジュバン動力学の抽出と熱力学的検証に関する研究計画。</p>
+                <a href="Research Proposal- Data-Driven Extraction of Langevin Dynamics and Thermodynamic Validation via the Fluctuation.pdf" target="_blank" class="pdf-btn">
+                    📄 Research Proposal (PDF)
+                </a>
             </div>
         </section>
 
-
-
-        <section id="proposal" class="section">
-    <h2 class="ja">Thermodynamics</h2>
-    <div class="card" style="text-align: center; border-top: 4px solid #c0392b; padding-top: 1rem;">
-        <p class="ja">The Significance of Adiabatic Processes in Thermodynamics: Integration of the Operational and Postulatory Approaches</p>
-        <div style="margin-top: 20px;">
-            <a href="The Significance of Adiabatic Processes in Thermodynamics- Integration of the Operational and Postulatory Approaches.pdf" target="_blank" class="pdf-btn">
-                <span class="ja">📄 The Significance of Adiabatic Processes in Thermodynamics- Integration of the Operational and Postulatory Approaches (PDF)</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-        
+        <section class="section">
+            <h2>Thermodynamics</h2>
+            <div class="card">
+                <p><strong>The Significance of Adiabatic Processes</strong></p>
+                <p style="color: #666; font-size: 0.85rem;">田崎晴明氏とH.B. Callen氏の熱力学記述の統合。断熱操作の物理的意義についての論考 [cite: 1, 3]。</p>
+                <a href="The Significance of Adiabatic Processes in Thermodynamics- Integration of the Operational and Postulatory Approaches.pdf" target="_blank" class="pdf-btn">
+                    📄 View Paper (PDF)
+                </a>
+            </div>
+        </section>
 
         <div id="interests" class="section">
             <h2>Research Interests</h2>
             <ul>
                 <li>Hamiltonian Neural Networks (HNN)</li>
-                <li>Stochastic Thermodynamics</li>
+                <li>Stochastic Thermodynamics [cite: 2]</li>
                 <li>Active Matter Physics</li>
             </ul>
         </div>
 
         <div id="hobbies" class="section photo-section">
             <h2>Hobbies / Cooking</h2>
-            <p>物理の合間の息抜き。</p>
+            <p>物理の思考を整理するための息抜き。複雑さを排除した「究極のシンプル」を料理でも追求しています。</p>
             <img src="IMG_3334.jpg" alt="こだわりの自作料理">
-            <p><a href="cooking/index.html" style="font-weight: bold;">→ Cooking page へ移動する</a></p>
+            <p style="text-align: center;"><a href="cooking/index.html" style="font-weight: bold;">→ Cooking page へ移動する</a></p>
         </div>
 
         <div id="links" class="section">
             <h2>Links</h2>
             <ul>
                 <li><a href="https://github.com/あなたのユーザー名">GitHub</a></li>
-                <li><a href="https://sites.google.com/holospectra.com/take-nishi/home">HP of take_nishi</a></li>
+                <li><a href="https://sites.google.com/holospectra.com/take-nishi/home">Official Site (Google Sites)</a></li>
             </ul>
         </div>
     </div>
